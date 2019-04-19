@@ -6,6 +6,7 @@
 Use yarn instead of npm
 clone repo and run yarn to install deps
 > yarn
+
 then to compile and run
 > yarn run dev
 
