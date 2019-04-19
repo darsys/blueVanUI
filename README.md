@@ -3,7 +3,8 @@
 > User interaface for van control
 
 #### Build Setup
-use yarn instead of npm
+>use yarn instead of npm
+
 clone repo and run
 yarn
 
