@@ -1,6 +1,6 @@
 # bluevanui
 
-> User interaface for van control
+The best user interaface for blue van control... ever in the whole space time and dimension
 
 #### Build Setup
 Use yarn instead of npm
