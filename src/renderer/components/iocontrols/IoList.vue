@@ -19,9 +19,11 @@
         @off="turnOff"
 			/>
 		</ul>
+    
 		<p v-else>
 			Nothing left in the list. Add a new todo in the input above.
 		</p>
+    <span>Message: {{ msg }}</span>
 	</div>
 </template>
 
@@ -38,22 +40,23 @@ export default {
   },
   data () {
     return {
+      msg: '',
       newIOItemText: '',
       ioitems: [
         {
           id: nextIOId++,
           text: 'Kitchen Lights',
-          pin: 29
+          pin: 26
         },
         {
           id: nextIOId++,
           text: 'Main Lights',
-          pin: 30
+          pin: 28
         },
         {
           id: nextIOId++,
           text: 'Diesel Heater',
-          pin: 28
+          pin: 33
         }
       ]
     }
@@ -74,11 +77,14 @@ export default {
         return ioitem.id !== idToRemove
       })
     },
-    readIO (idToRead) {
+    readIO (resp) {
+      this.msg = 'Read ' + resp
     },
-    turnOn (id) {
+    turnOn (resp) {
+      this.msg = 'TurnOn: ' + resp
     },
-    turnOff (id) {
+    turnOff (resp) {
+      this.msg = 'TurnOff: ' + resp
     }
   }
 }
