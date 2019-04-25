@@ -33,6 +33,9 @@ export default {
       return 'read called on pin ' + this.ioitem.pin
     },
     write: function (val) {
+      this.$http
+        .get('http://192.168.87.123/arduino/digital/' + this.ioitem.pin + '/' + val, { crossDomain: true })
+        .then(response => (this.currentVal = response.data))
       return 'write called on pin ' + this.ioitem.pin + ' with val ' + val
     }
   }
